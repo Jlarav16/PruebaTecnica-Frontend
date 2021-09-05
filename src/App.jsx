@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //componets
 import Find from "./components/Find.jsx";
 import History from "./components/History.jsx";
-import Principal from "./components/Principal.jsx";
 
 export default function App() {
   return (
