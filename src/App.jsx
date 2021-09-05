@@ -15,7 +15,7 @@ export default function App() {
         <Switch>
           <Route path="/history" component={History} />
           <Route path="/find" component={Find} />
-          <Route path="/" component={Principal} />
+          <Route path="/" component={Find} />
         </Switch>
       </Router>
     </div>

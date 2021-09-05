@@ -13,7 +13,6 @@ import {
 
 //Material-ui/core/icons
 import HistoryIcon from "@material-ui/icons/History";
-import HomeIcon from "@material-ui/icons/Home";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,19 +26,12 @@ export default function Header() {
   const classes = useStyles();
   return (
     <div>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" style={{ backgroundColor: "#3d5485" }}>
         <Toolbar>
           <Typography className={classes.title} variant="h6">
             PRUEBA TECNICA
           </Typography>
-          <Button
-            color="inherit"
-            component={Link}
-            startIcon={<HomeIcon />}
-            to="/principal"
-          >
-            Home
-          </Button>
+
           <Button
             color="inherit"
             component={Link}

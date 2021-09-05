@@ -1,6 +1,7 @@
 //react
 import { React, useEffect, useState } from "react";
-
+//react-router-dom
+import { Link } from "react-router-dom";
 //Material-ui/core
 import {
   makeStyles,
@@ -12,7 +13,10 @@ import {
   TableRow,
   TableCell,
   Grid,
+  Button,
 } from "@material-ui/core";
+
+import PageviewIcon from "@material-ui/icons/Pageview";
 
 import axios from "axios";
 
@@ -22,7 +26,10 @@ const useStyles = makeStyles({
     justifyContent: "center",
   },
   table_head: {
-    backgroundColor: "Gray",
+    backgroundColor: "#3d5485",
+  },
+  table_body: {
+    backgroundColor: "#3d5485",
   },
 });
 
@@ -45,7 +52,7 @@ export default function History() {
 
   return (
     <Grid item xs={12} className={classes.table_position}>
-      <Grid item xs={9}>
+      <Grid item xs={10}>
         <TableContainer component={Paper}>
           <Table size="small" aria-label="a dense table">
             <TableHead className={classes.table_head}>
@@ -62,6 +69,9 @@ export default function History() {
                 <TableCell align="center">
                   <strong>DATE</strong>
                 </TableCell>
+                <TableCell align="center">
+                  <strong>Consultar</strong>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -71,6 +81,14 @@ export default function History() {
                   <TableCell align="center">{item.city}</TableCell>
                   <TableCell align="center">{item.country}</TableCell>
                   <TableCell align="center">{item.date}</TableCell>
+                  <TableCell>
+                    <Button
+                      color="inherit"
+                      component={Link}
+                      endIcon={<PageviewIcon />}
+                      to={`/find?city=${item.city}`}
+                    />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
